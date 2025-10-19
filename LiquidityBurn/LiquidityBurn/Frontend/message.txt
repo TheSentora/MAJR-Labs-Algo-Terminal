@@ -1,0 +1,236 @@
+/* ---------- UI Bits ---------- */
+
+function Card({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={styles.kpi}>
+      <div style={styles.kpiLabel}>{title}</div>
+      <div style={styles.kpiValue}>{children}</div>
+    </div>
+  );
+}
+
+const styles = {
+  wrap: {
+    minHeight: "100vh",
+    background:
+      "radial-gradient(1100px 600px at 15% -20%, rgba(14,165,233,0.18), transparent), radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,0.16), transparent), #07090d",
+    color: "#e9f5ff",
+    padding: "40px 16px",
+  },
+  container: { maxWidth: 980, margin: "0 auto" },
+  title: { fontSize: 34, fontWeight: 800, letterSpacing: 0.3, margin: "0 0 8px" },
+  subtitle: { opacity: 0.75, marginBottom: 24 },
+
+  form: { display: "flex", gap: 12, alignItems: "center", marginBottom: 20 },
+  input: {
+    flex: 1,
+    height: 44,
+    borderRadius: 12,
+    border: "1px solid rgba(147,197,253,0.12)",
+    background: "rgba(2,6,12,0.75)",
+    color: "#e9f5ff",
+    padding: "0 14px",
+    outline: "none",
+  },
+  button: {
+    height: 44,
+    borderRadius: 12,
+    padding: "0 16px",
+    background: "linear-gradient(135deg, rgba(14,165,233,0.35), rgba(59,130,246,0.35))",
+    border: "1px solid rgba(96,165,250,0.35)",
+    color: "#e9f5ff",
+    cursor: "pointer",
+    boxShadow: "0 0 18px rgba(14,165,233,0.18)",
+  },
+
+  error: {
+    background: "rgba(239,68,68,0.14)",
+    border: "1px solid rgba(239,68,68,0.35)",
+    padding: "10px 12px",
+    borderRadius: 10,
+    marginBottom: 12,
+  },
+  hint: { marginTop: 18, opacity: 0.8 },
+
+  /* Main card */
+  mainCard: {
+    background: "rgba(8,12,20,0.85)",
+    border: "1px solid rgba(96,165,250,0.10)",
+    borderRadius: 18,
+    padding: 16,
+    marginTop: 10,
+    boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
+  },
+  mainHeader: { display: "grid", gap: 10, marginBottom: 10 },
+  badgesRow: { display: "flex", gap: 8, flexWrap: "wrap" },
+  dexBadge: {
+    fontSize: 12,
+    padding: "2px 8px",
+    borderRadius: 999,
+    background: "rgba(59,130,246,0.18)",
+    border: "1px solid rgba(59,130,246,0.45)",
+  },
+  chainBadge: {
+    fontSize: 12,
+    padding: "2px 8px",
+    borderRadius: 999,
+    background: "rgba(14,165,233,0.16)",
+    border: "1px solid rgba(14,165,233,0.45)",
+  },
+  labelBadge: {
+    fontSize: 12,
+    padding: "2px 8px",
+    borderRadius: 999,
+    background: "rgba(148,163,184,0.14)",
+    border: "1px solid rgba(148,163,184,0.28)",
+  },
+
+  titleRow: { display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 },
+  mainTitle: { fontSize: 22, margin: 0 },
+  openLink: {
+    textDecoration: "none",
+    background: "rgba(2,6,12,0.75)",
+    border: "1px solid rgba(96,165,250,0.25)",
+    padding: "8px 10px",
+    borderRadius: 10,
+    color: "#cfeaff",
+    fontSize: 13,
+    boxShadow: "0 0 12px rgba(59,130,246,0.18)",
+  },
+
+  addrRow: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))",
+    gap: 10,
+    fontFamily:
+      "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace",
+    opacity: 0.95,
+  },
+  addrLabel: { opacity: 0.7, marginRight: 6 },
+  code: {
+    background: "rgba(2,6,12,0.75)",
+    padding: "2px 6px",
+    borderRadius: 6,
+    border: "1px solid rgba(96,165,250,0.18)",
+  },
+
+  detailsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+    gap: 10,
+    marginTop: 12,
+  },
+  kpi: {
+    background: "rgba(2,6,12,0.75)",
+    border: "1px solid rgba(96,165,250,0.14)",
+    borderRadius: 12,
+    padding: 10,
+  },
+  kpiLabel: { fontSize: 12, opacity: 0.7, marginBottom: 6 },
+  kpiValue: { fontSize: 16, fontWeight: 700 },
+
+  linksWrap: { marginTop: 16, display: "grid", gap: 8 },
+  linksTitle: { fontSize: 13, opacity: 0.85, marginBottom: 6 },
+  linksRow: { display: "flex", gap: 8, flexWrap: "wrap" },
+  linkChip: {
+    fontSize: 12,
+    textDecoration: "none",
+    color: "#e9f5ff",
+    background: "rgba(2,6,12,0.75)",
+    border: "1px solid rgba(96,165,250,0.25)",
+    padding: "6px 8px",
+    borderRadius: 999,
+  },
+  socialChip: {
+    fontSize: 12,
+    background: "rgba(2,6,12,0.75)",
+    border: "1px solid rgba(96,165,250,0.25)",
+    padding: "6px 8px",
+    borderRadius: 999,
+  },
+} as const;
+
+const tradeStyles = {
+  box: {
+    marginTop: 16,
+    borderRadius: 16,
+    padding: 14,
+    background: "linear-gradient(180deg, rgba(11,18,32,.85), rgba(5,10,20,.85))",
+    border: "1px solid rgba(59,130,246,0.18)",
+    boxShadow: "0 10px 30px rgba(2,6,12,0.6)",
+  },
+  rowHeader: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 },
+  title: { margin: 0, fontSize: 16, fontWeight: 800 },
+  connectBtn: {
+    borderRadius: 10,
+    padding: "8px 12px",
+    border: "1px solid rgba(96,165,250,0.5)",
+    background: "linear-gradient(135deg, rgba(14,165,233,.35), rgba(59,130,246,.35))",
+    color: "#e9f5ff",
+    cursor: "pointer",
+    boxShadow: "0 0 18px rgba(14,165,233,.25)",
+  },
+  addrBadge: {
+    fontSize: 12,
+    padding: "4px 8px",
+    borderRadius: 999,
+    background: "rgba(59,130,246,0.18)",
+    border: "1px solid rgba(59,130,246,0.45)",
+  },
+  rows: { display: "grid", gap: 10 },
+  label: { fontSize: 12, opacity: 0.8, marginBottom: 6 },
+  input: {
+    width: "100%",
+    height: 42,
+    borderRadius: 10,
+    border: "1px solid rgba(147,197,253,0.2)",
+    background: "rgba(2,6,12,0.75)",
+    color: "#e9f5ff",
+    padding: "0 12px",
+    outline: "none",
+  },
+  hint: { fontSize: 12, opacity: 0.7, marginTop: 6 },
+  btnRow: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 10 },
+  actionBtn: {
+    height: 44,
+    borderRadius: 12,
+    border: "1px solid rgba(96,165,250,0.35)",
+    background: "linear-gradient(135deg, rgba(14,165,233,0.25), rgba(59,130,246,0.25))",
+    color: "#e9f5ff",
+    cursor: "pointer",
+    fontWeight: 800 as const,
+    letterSpacing: 0.3,
+    boxShadow: "0 0 20px rgba(59,130,246,0.25)",
+  },
+  buyBtn: { filter: "drop-shadow(0 0 12px rgba(14,165,233,.25))" },
+  sellBtn: { filter: "drop-shadow(0 0 12px rgba(239,68,68,.25))", borderColor: "rgba(239,68,68,0.35)" },
+  modalBackdrop: {
+    position: "fixed" as const, inset: 0, background: "rgba(0,0,0,.6)",
+    display: "grid", placeItems: "center", zIndex: 9999,
+  },
+  modalBody: {
+    width: 430, maxWidth: "90vw", borderRadius: 16, overflow: "hidden",
+    background: "rgba(8,12,20,0.95)", border: "1px solid rgba(96,165,250,0.2)",
+    boxShadow: "0 20px 60px rgba(0,0,0,.6)",
+  },
+  modalHeader: {
+    display: "flex", justifyContent: "space-between", alignItems: "center",
+    padding: "10px 12px", borderBottom: "1px solid rgba(96,165,250,0.14)",
+  },
+  closeX: {
+    background: "transparent", border: "none", color: "#cfeaff", cursor: "pointer", fontSize: 16,
+  },
+  iframe: { width: 415, height: 440, border: "none" },
+} as const;
+
+const globalCss = `
+  * { box-sizing: border-box }
+  a:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35) }
+  ::placeholder { color: rgba(207,234,255,.5) }
+  button:not(:disabled):hover {
+    filter: brightness(1.05);
+    box-shadow: 0 0 20px rgba(59,130,246,0.25);
+  }
+`;
+
+

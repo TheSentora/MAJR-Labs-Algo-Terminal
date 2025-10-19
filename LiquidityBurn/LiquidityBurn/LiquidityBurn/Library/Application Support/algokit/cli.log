@@ -1,0 +1,677 @@
+2025-10-18T20:20:42.962 algokit.core.config_commands.version_prompt DEBUG /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check inaccessible
+2025-10-18T20:20:43.009 httpcore.connection DEBUG connect_tcp.started host='api.github.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-10-18T20:20:43.016 httpcore.connection DEBUG connect_tcp.failed exception=ConnectError(gaierror(8, 'nodename nor servname provided, or not known'))
+2025-10-18T20:20:43.017 algokit.core.config_commands.version_prompt DEBUG Checking for latest version failed
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.13/site-packages/algokit/core/config_commands/version_prompt.py", line 86, in get_latest_version_or_cached
+    version = get_latest_github_version()
+  File "/opt/anaconda3/lib/python3.13/site-packages/algokit/core/config_commands/version_prompt.py", line 100, in get_latest_github_version
+    response = httpx.get(LATEST_URL, headers=headers)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_api.py", line 195, in get
+    return request(
+        "GET",
+    ...<9 lines>...
+        trust_env=trust_env,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_api.py", line 109, in request
+    return client.request(
+           ~~~~~~~~~~~~~~^
+        method=method,
+        ^^^^^^^^^^^^^^
+    ...<8 lines>...
+        follow_redirects=follow_redirects,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/anaconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known
+2025-10-18T20:20:43.021 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:20:43.021 algokit.core.proc DEBUG Running 'poetry --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract'
+2025-10-18T20:20:43.383 algokit.core.proc DEBUG [1mpoetry:[0m Poetry (version 2.2.1)
+2025-10-18T20:20:43.413 algokit.core.proc DEBUG 'poetry --version' completed successfully
+2025-10-18T20:20:43.413 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:43.415 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:43.415 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract for bootstrapping needs
+2025-10-18T20:20:43.415 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit/.algokit.toml
+2025-10-18T20:20:43.416 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.416 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit for bootstrapping needs
+2025-10-18T20:20:43.416 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit/generators/.algokit.toml
+2025-10-18T20:20:43.417 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.417 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit/generators for bootstrapping needs
+2025-10-18T20:20:43.417 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:43.418 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.editorconfig
+2025-10-18T20:20:43.418 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/.algokit.toml
+2025-10-18T20:20:43.418 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.418 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git for bootstrapping needs
+2025-10-18T20:20:43.419 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/COMMIT_EDITMSG
+2025-10-18T20:20:43.419 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/HEAD
+2025-10-18T20:20:43.419 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/config
+2025-10-18T20:20:43.420 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/description
+2025-10-18T20:20:43.420 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/.algokit.toml
+2025-10-18T20:20:43.420 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.420 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks for bootstrapping needs
+2025-10-18T20:20:43.421 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/applypatch-msg.sample
+2025-10-18T20:20:43.421 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/commit-msg.sample
+2025-10-18T20:20:43.421 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/fsmonitor-watchman.sample
+2025-10-18T20:20:43.422 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/post-update.sample
+2025-10-18T20:20:43.422 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-applypatch.sample
+2025-10-18T20:20:43.422 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-commit.sample
+2025-10-18T20:20:43.422 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-merge-commit.sample
+2025-10-18T20:20:43.423 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-push.sample
+2025-10-18T20:20:43.423 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-rebase.sample
+2025-10-18T20:20:43.423 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/pre-receive.sample
+2025-10-18T20:20:43.423 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/prepare-commit-msg.sample
+2025-10-18T20:20:43.423 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/push-to-checkout.sample
+2025-10-18T20:20:43.424 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/hooks/update.sample
+2025-10-18T20:20:43.424 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/index
+2025-10-18T20:20:43.424 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/info/.algokit.toml
+2025-10-18T20:20:43.424 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.425 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/info for bootstrapping needs
+2025-10-18T20:20:43.425 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/info/exclude
+2025-10-18T20:20:43.425 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/logs/.algokit.toml
+2025-10-18T20:20:43.425 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.426 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/logs for bootstrapping needs
+2025-10-18T20:20:43.426 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/logs/HEAD
+2025-10-18T20:20:43.426 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/objects/.algokit.toml
+2025-10-18T20:20:43.426 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.427 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/objects for bootstrapping needs
+2025-10-18T20:20:43.427 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/refs/.algokit.toml
+2025-10-18T20:20:43.428 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.428 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.git/refs for bootstrapping needs
+2025-10-18T20:20:43.428 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.gitattributes
+2025-10-18T20:20:43.428 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.gitignore
+2025-10-18T20:20:43.429 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.vscode/.algokit.toml
+2025-10-18T20:20:43.429 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.429 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.vscode for bootstrapping needs
+2025-10-18T20:20:43.429 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.vscode/settings.json
+2025-10-18T20:20:43.430 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/README.md
+2025-10-18T20:20:43.430 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/liquid_burn_contract.code-workspace
+2025-10-18T20:20:43.430 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/.algokit.toml
+2025-10-18T20:20:43.430 algokit.core.conf DEBUG No .algokit.toml file found in the project directory.
+2025-10-18T20:20:43.431 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects for bootstrapping needs
+2025-10-18T20:20:43.431 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/.gitkeep
+2025-10-18T20:20:43.431 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:43.432 algokit.core.project.bootstrap DEBUG Checking /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract for bootstrapping needs
+2025-10-18T20:20:43.432 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:43.433 algokit.core.project.bootstrap DEBUG Running `algokit project bootstrap poetry`
+2025-10-18T20:20:43.433 algokit.core.proc DEBUG Running 'poetry --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract'
+2025-10-18T20:20:43.585 algokit.core.proc DEBUG [1mpoetry:[0m Poetry (version 2.2.1)
+2025-10-18T20:20:43.615 algokit.core.proc DEBUG 'poetry --version' completed successfully
+2025-10-18T20:20:43.615 algokit.core.project.bootstrap INFO Installing Python dependencies and setting up Python virtual environment via Poetry
+2025-10-18T20:20:43.615 algokit.core.proc DEBUG Running 'poetry install' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:20:43.913 algokit.core.proc INFO [1mpoetry:[0m Installing dependencies from lock file
+2025-10-18T20:20:43.981 algokit.core.proc INFO [1mpoetry:[0m 
+2025-10-18T20:20:43.981 algokit.core.proc INFO [1mpoetry:[0m No dependencies to install or update
+2025-10-18T20:20:44.023 algokit.core.proc DEBUG 'poetry install' completed successfully
+2025-10-18T20:20:44.024 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:20:44.024 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.editorconfig
+2025-10-18T20:20:44.024 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.gitignore
+2025-10-18T20:20:44.025 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv
+2025-10-18T20:20:44.025 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/README.md
+2025-10-18T20:20:44.025 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/poetry.lock
+2025-10-18T20:20:44.025 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/poetry.toml
+2025-10-18T20:20:44.025 algokit.core.project.bootstrap DEBUG Skipping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/pyproject.toml
+2025-10-18T20:20:44.026 algokit.cli.project.bootstrap INFO Finished bootstrapping /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract
+2025-10-18T20:23:08.072 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:23:08.073 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:23:13.209 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:23:13.210 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:23:13.211 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/.algokit.toml
+2025-10-18T20:23:43.461 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:23:43.462 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:24:43.868 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:24:43.869 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:24:43.869 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:24:49.212 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:24:49.213 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:24:49.213 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:46:02.951 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:46:02.952 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:46:02.952 algokit.core.proc DEBUG Running 'poetry --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:03.306 algokit.core.proc DEBUG [1mpoetry:[0m Poetry (version 2.2.1)
+2025-10-18T20:46:03.333 algokit.core.proc DEBUG 'poetry --version' completed successfully
+2025-10-18T20:46:03.334 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:46:03.335 rich DEBUG Command 'lint' has no custom commands to execute, skipping...
+2025-10-18T20:46:03.336 rich INFO Running `build` command in /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract...
+2025-10-18T20:46:03.336 algokit.core.proc DEBUG Running '/Users/max/.local/bin/poetry run python -m smart_contracts build liquid_burn_app' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:03.842 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:03,842 INFO      : Loading .env
+2025-10-18T20:46:03.844 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:03,844 INFO      : Building app at /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py
+2025-10-18T20:46:03.844 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:03,844 INFO      : Exporting /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app
+2025-10-18T20:46:04.315 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:46:04.315 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:46:04.316 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:06.279 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:46:06.348 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:46:06.349 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:07.239 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:46:08.296 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.297 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+2025-10-18T20:46:08.297 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.298 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.298 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.298 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.299 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.299 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.299 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+2025-10-18T20:46:08.299 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.300 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.300 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.300 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.301 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.301 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+2025-10-18T20:46:08.301 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.301 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.302 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.302 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.466 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:46:08.544 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m Traceback (most recent call last):
+2025-10-18T20:46:08.545 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "<frozen runpy>", line 198, in _run_module_as_main
+2025-10-18T20:46:08.545 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "<frozen runpy>", line 88, in _run_code
+2025-10-18T20:46:08.545 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 207, in <module>
+2025-10-18T20:46:08.545 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m main(sys.argv[1], sys.argv[2])
+2025-10-18T20:46:08.546 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-18T20:46:08.546 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 177, in main
+2025-10-18T20:46:08.546 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m build(artifact_path / contract.name, contract.path)
+2025-10-18T20:46:08.546 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-18T20:46:08.546 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 117, in build
+2025-10-18T20:46:08.547 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m raise Exception(f"Could not build contract:\n{build_result.stdout}")
+2025-10-18T20:46:08.547 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m Exception: Could not build contract:
+2025-10-18T20:46:08.547 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:46:08.547 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.548 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+2025-10-18T20:46:08.548 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.548 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.548 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.549 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.549 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.549 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.550 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+2025-10-18T20:46:08.550 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.550 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.550 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.551 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.551 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.551 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+2025-10-18T20:46:08.552 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.552 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.552 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:08.552 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:08.552 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 
+2025-10-18T20:46:08.553 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m An error occurred during compile. Please ensure that any supplied arguments are valid and any files passed are valid Algorand Python code before retrying.
+2025-10-18T20:46:08.553 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 
+2025-10-18T20:46:08.563 algokit.core.proc DEBUG '/Users/max/.local/bin/poetry run python -m smart_contracts build liquid_burn_app' failed, exited with code = 1
+2025-10-18T20:46:08.563 rich ERROR 
+····················· project run 'build' command output: ······················
+2025-10-18 20:46:03,842 INFO      : Loading .env
+2025-10-18 20:46:03,844 INFO      : Building app at /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py
+2025-10-18 20:46:03,844 INFO      : Exporting /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 207, in <module>
+    main(sys.argv[1], sys.argv[2])
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 177, in main
+    build(artifact_path / contract.name, contract.path)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 117, in build
+    raise Exception(f"Could not build contract:\n{build_result.stdout}")
+Exception: Could not build contract:
+info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+
+An error occurred during compile. Please ensure that any supplied arguments are valid and any files passed are valid Algorand Python code before retrying.
+
+
+2025-10-18T20:46:16.988 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:46:16.993 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:46:17.005 algokit.core.proc DEBUG Running 'poetry --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:17.501 algokit.core.proc DEBUG [1mpoetry:[0m Poetry (version 2.2.1)
+2025-10-18T20:46:17.531 algokit.core.proc DEBUG 'poetry --version' completed successfully
+2025-10-18T20:46:17.532 algokit.core.conf DEBUG Attempting to load project config from /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.algokit.toml
+2025-10-18T20:46:17.533 rich DEBUG Command 'lint' has no custom commands to execute, skipping...
+2025-10-18T20:46:17.534 rich INFO Running `build` command in /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract...
+2025-10-18T20:46:17.534 algokit.core.proc DEBUG Running '/Users/max/.local/bin/poetry run python -m smart_contracts build liquid_burn_app' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:17.908 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:17,908 INFO      : Loading .env
+2025-10-18T20:46:17.909 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:17,909 INFO      : Building app at /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py
+2025-10-18T20:46:17.909 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 2025-10-18 20:46:17,909 INFO      : Exporting /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app
+2025-10-18T20:46:18.390 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:46:18.390 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:46:18.391 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:19.063 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:46:19.129 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:46:19.129 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:19.691 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:46:20.750 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.750 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+2025-10-18T20:46:20.750 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.751 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.751 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.751 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.751 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.752 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.752 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+2025-10-18T20:46:20.752 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.752 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.753 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.753 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.753 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.753 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+2025-10-18T20:46:20.754 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.754 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:20.754 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:20.754 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.287 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:46:21.426 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m Traceback (most recent call last):
+2025-10-18T20:46:21.427 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "<frozen runpy>", line 198, in _run_module_as_main
+2025-10-18T20:46:21.427 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "<frozen runpy>", line 88, in _run_code
+2025-10-18T20:46:21.428 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 207, in <module>
+2025-10-18T20:46:21.428 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m main(sys.argv[1], sys.argv[2])
+2025-10-18T20:46:21.428 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-18T20:46:21.428 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 177, in main
+2025-10-18T20:46:21.429 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m build(artifact_path / contract.name, contract.path)
+2025-10-18T20:46:21.429 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-18T20:46:21.429 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 117, in build
+2025-10-18T20:46:21.429 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m raise Exception(f"Could not build contract:\n{build_result.stdout}")
+2025-10-18T20:46:21.430 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m Exception: Could not build contract:
+2025-10-18T20:46:21.430 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:46:21.430 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.430 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+2025-10-18T20:46:21.431 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.431 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.432 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.432 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.433 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.433 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.433 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+2025-10-18T20:46:21.433 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.434 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.434 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.434 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.434 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.435 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+2025-10-18T20:46:21.435 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.435 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.435 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:21.436 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:21.436 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 
+2025-10-18T20:46:21.436 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m An error occurred during compile. Please ensure that any supplied arguments are valid and any files passed are valid Algorand Python code before retrying.
+2025-10-18T20:46:21.436 algokit.core.proc DEBUG [1m/Users/max/.local/bin/poetry:[0m 
+2025-10-18T20:46:21.451 algokit.core.proc DEBUG '/Users/max/.local/bin/poetry run python -m smart_contracts build liquid_burn_app' failed, exited with code = 1
+2025-10-18T20:46:21.451 rich ERROR 
+····················· project run 'build' command output: ······················
+2025-10-18 20:46:17,908 INFO      : Loading .env
+2025-10-18 20:46:17,909 INFO      : Building app at /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py
+2025-10-18 20:46:17,909 INFO      : Exporting /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 207, in <module>
+    main(sys.argv[1], sys.argv[2])
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 177, in main
+    build(artifact_path / contract.name, contract.path)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/__main__.py", line 117, in build
+    raise Exception(f"Could not build contract:\n{build_result.stdout}")
+Exception: Could not build contract:
+info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+
+An error occurred during compile. Please ensure that any supplied arguments are valid and any files passed are valid Algorand Python code before retrying.
+
+
+2025-10-18T20:46:51.598 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:46:51.598 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:46:51.599 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:52.232 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:46:52.287 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:46:52.287 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:46:52.842 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:46:53.800 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:38:27 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.801 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:39:22 error: Incompatible types in assignment (expression has type "Account", variable has type "GlobalState[Account]")  [assignment]
+2025-10-18T20:46:53.801 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:40:31 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.801 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:43:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.802 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:44:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.802 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:45:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.802 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.802 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.803 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:87:43 error: Argument 1 to "Asset" has incompatible type "GlobalState[UInt64]"; expected "UInt64 | int"  [arg-type]
+2025-10-18T20:46:53.803 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.803 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:96:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.803 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Unsupported operand types for + ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.804 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:97:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.804 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:19 error: Unsupported operand types for * ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.804 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:114:49 error: Unsupported operand types for // ("UInt64" and "GlobalState[UInt64]")  [operator]
+2025-10-18T20:46:53.804 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.805 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:118:28 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.805 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Unsupported operand types for - ("GlobalState[UInt64]" and "UInt64")  [operator]
+2025-10-18T20:46:53.805 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:119:29 error: Incompatible types in assignment (expression has type "UInt64", variable has type "GlobalState[UInt64]")  [assignment]
+2025-10-18T20:46:53.928 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:47:37.585 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:47:37.586 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:47:37.586 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:47:38.418 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:47:38.498 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:47:38.499 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:47:39.203 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:47:40.220 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:20:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.221 algokit.core.proc DEBUG [1mpoetry:[0m is_initialized = GlobalState(UInt64(0), description="Set to 1 after initialize runs")
+2025-10-18T20:47:40.221 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.221 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:21:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.222 algokit.core.proc DEBUG [1mpoetry:[0m admin = GlobalState(Account, description="Address allowed to configure and fund")
+2025-10-18T20:47:40.222 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.222 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:22:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.223 algokit.core.proc DEBUG [1mpoetry:[0m burn_asset = GlobalState(UInt64(0), description="ASA id recorded as the burn target")
+2025-10-18T20:47:40.223 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.223 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:23:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.223 algokit.core.proc DEBUG [1mpoetry:[0m total_burned = GlobalState(UInt64(0), description="Total ASA units recorded as burned")
+2025-10-18T20:47:40.224 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.224 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:24:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.224 algokit.core.proc DEBUG [1mpoetry:[0m total_shares = GlobalState(UInt64(0), description="Total shares minted to burners")
+2025-10-18T20:47:40.224 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.225 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:25:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.225 algokit.core.proc DEBUG [1mpoetry:[0m reward_pool = GlobalState(UInt64(0), description="Unclaimed Algo rewards in microalgos")
+2025-10-18T20:47:40.225 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.225 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:28:5 error: assignment statements are not supported in the class body
+2025-10-18T20:47:40.226 algokit.core.proc DEBUG [1mpoetry:[0m user_shares = LocalState(UInt64, key="shares", description="Outstanding burner shares")
+2025-10-18T20:47:40.226 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:47:40.239 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:33:17 error: unsupported type reference
+2025-10-18T20:47:40.239 algokit.core.proc DEBUG [1mpoetry:[0m state = type(self)
+2025-10-18T20:47:40.239 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~
+2025-10-18T20:47:40.240 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:56:17 error: unsupported type reference
+2025-10-18T20:47:40.240 algokit.core.proc DEBUG [1mpoetry:[0m state = type(self)
+2025-10-18T20:47:40.240 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~
+2025-10-18T20:47:40.240 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:80:17 error: unsupported type reference
+2025-10-18T20:47:40.241 algokit.core.proc DEBUG [1mpoetry:[0m state = type(self)
+2025-10-18T20:47:40.241 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~
+2025-10-18T20:47:40.241 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:115:17 error: unsupported type reference
+2025-10-18T20:47:40.242 algokit.core.proc DEBUG [1mpoetry:[0m state = type(self)
+2025-10-18T20:47:40.242 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~
+2025-10-18T20:47:40.413 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:51:10.138 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:51:10.138 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:51:10.139 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:51:11.168 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:51:11.238 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:51:11.239 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:51:12.440 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:51:13.533 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:17 error: unsupported type-form
+2025-10-18T20:51:13.534 algokit.core.proc DEBUG [1mpoetry:[0m _T = TypeVar("_T")
+2025-10-18T20:51:13.534 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:13.535 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:17:6 error: Unsupported construct CallExpr: not supported at module level
+2025-10-18T20:51:13.535 algokit.core.proc DEBUG [1mpoetry:[0m _T = TypeVar("_T")
+2025-10-18T20:51:13.535 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~
+2025-10-18T20:51:13.535 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:20 error: free functions must be annotated with @algopy.subroutine
+2025-10-18T20:51:13.536 algokit.core.proc DEBUG [1mpoetry:[0m def _global_state(type_: type[_T], key: str) -> GlobalState[_T]:
+2025-10-18T20:51:13.536 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edits=DecorateFunction(symbol='algopy._hints.subroutine')
+2025-10-18T20:51:13.536 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:25 error: free functions must be annotated with @algopy.subroutine
+2025-10-18T20:51:13.537 algokit.core.proc DEBUG [1mpoetry:[0m def _local_state(type_: type[_T], key: str) -> LocalState[_T]:
+2025-10-18T20:51:13.537 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~edits=DecorateFunction(symbol='algopy._hints.subroutine')
+2025-10-18T20:51:13.537 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:20 error: generic type usage requires parameters
+2025-10-18T20:51:13.538 algokit.core.proc DEBUG [1mpoetry:[0m def _global_state(type_: type[_T], key: str) -> GlobalState[_T]:
+2025-10-18T20:51:13.538 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:13.538 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:25 error: generic type usage requires parameters
+2025-10-18T20:51:13.539 algokit.core.proc DEBUG [1mpoetry:[0m def _local_state(type_: type[_T], key: str) -> LocalState[_T]:
+2025-10-18T20:51:13.539 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:13.541 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:36:26 error: Cannot invoke smart_contracts.liquid_burn_app.contract._global_state as it is not decorated with algopy.subroutine
+2025-10-18T20:51:13.541 algokit.core.proc DEBUG [1mpoetry:[0m is_initialized = _global_state(UInt64, "is_initialized")
+2025-10-18T20:51:13.541 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~
+2025-10-18T20:51:13.542 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:65:23 error: Cannot invoke smart_contracts.liquid_burn_app.contract._global_state as it is not decorated with algopy.subroutine
+2025-10-18T20:51:13.542 algokit.core.proc DEBUG [1mpoetry:[0m admin_state = _global_state(Account, "admin")
+2025-10-18T20:51:13.542 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~
+2025-10-18T20:51:13.542 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:90:26 error: Cannot invoke smart_contracts.liquid_burn_app.contract._global_state as it is not decorated with algopy.subroutine
+2025-10-18T20:51:13.543 algokit.core.proc DEBUG [1mpoetry:[0m is_initialized = _global_state(UInt64, "is_initialized")
+2025-10-18T20:51:13.543 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~
+2025-10-18T20:51:13.543 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:129:23 error: Cannot invoke smart_contracts.liquid_burn_app.contract._global_state as it is not decorated with algopy.subroutine
+2025-10-18T20:51:13.544 algokit.core.proc DEBUG [1mpoetry:[0m reward_pool = _global_state(UInt64, "reward_pool")
+2025-10-18T20:51:13.544 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~
+2025-10-18T20:51:13.707 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:51:55.331 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:51:55.332 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:51:55.332 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:51:55.969 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:51:56.024 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:51:56.024 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:51:56.563 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:51:57.841 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:24:13 error: Unsupported construct RaiseStmt: exception raising and exception handling not supported
+2025-10-18T20:51:57.841 algokit.core.proc DEBUG [1mpoetry:[0m raise AssertionError("already initialized")
+2025-10-18T20:51:57.842 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:57.842 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:55:13 error: Unsupported construct RaiseStmt: exception raising and exception handling not supported
+2025-10-18T20:51:57.842 algokit.core.proc DEBUG [1mpoetry:[0m raise AssertionError("only admin can fund rewards")
+2025-10-18T20:51:57.842 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:57.843 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:82:13 error: Unsupported construct RaiseStmt: exception raising and exception handling not supported
+2025-10-18T20:51:57.843 algokit.core.proc DEBUG [1mpoetry:[0m raise AssertionError("contract not initialized")
+2025-10-18T20:51:57.843 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:57.843 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:120:13 error: Unsupported construct RaiseStmt: exception raising and exception handling not supported
+2025-10-18T20:51:57.844 algokit.core.proc DEBUG [1mpoetry:[0m raise AssertionError("no shares to claim")
+2025-10-18T20:51:57.844 algokit.core.proc DEBUG [1mpoetry:[0m ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-18T20:51:57.984 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T20:52:41.442 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:52:41.443 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:52:41.443 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:52:42.091 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:52:42.142 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:52:42.143 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:52:42.671 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:52:43.905 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json
+2025-10-18T20:52:43.906 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.teal
+2025-10-18T20:52:43.906 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.teal
+2025-10-18T20:52:43.906 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.puya.map
+2025-10-18T20:52:43.907 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.puya.map
+2025-10-18T20:52:44.045 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' completed successfully
+2025-10-18T20:52:44.454 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:52:44.454 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:52:44.454 algokit.core.typed_client_generation DEBUG Searching for project installed client generator
+2025-10-18T20:52:44.455 algokit.core.proc DEBUG Running 'poetry show algokit-client-generator --tree' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:52:44.707 algokit.core.proc DEBUG [1mpoetry:[0m algokit-client-generator 2.2.0 Algorand typed client Generator
+2025-10-18T20:52:44.708 algokit.core.proc DEBUG [1mpoetry:[0m └── algokit-utils >=4.0.1,<5.0.0
+2025-10-18T20:52:44.708 algokit.core.proc DEBUG [1mpoetry:[0m ├── httpx >=0.23.1,<=0.28.1
+2025-10-18T20:52:44.708 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── anyio *
+2025-10-18T20:52:44.708 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── idna >=2.8
+2025-10-18T20:52:44.709 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── sniffio >=1.1
+2025-10-18T20:52:44.709 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── typing-extensions >=4.5
+2025-10-18T20:52:44.709 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── certifi *
+2025-10-18T20:52:44.709 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── httpcore ==1.*
+2025-10-18T20:52:44.710 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── certifi * (circular dependency aborted here)
+2025-10-18T20:52:44.710 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── h11 >=0.16
+2025-10-18T20:52:44.710 algokit.core.proc DEBUG [1mpoetry:[0m │   └── idna * (circular dependency aborted here)
+2025-10-18T20:52:44.710 algokit.core.proc DEBUG [1mpoetry:[0m ├── py-algorand-sdk >=2.11.0,<3.0.0
+2025-10-18T20:52:44.711 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── msgpack >=1.0.0,<2
+2025-10-18T20:52:44.711 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── pycryptodomex >=3.6.0,<4
+2025-10-18T20:52:44.711 algokit.core.proc DEBUG [1mpoetry:[0m │   └── pynacl >=1.4.0,<2
+2025-10-18T20:52:44.711 algokit.core.proc DEBUG [1mpoetry:[0m │       ├── cffi >=1.4.1
+2025-10-18T20:52:44.712 algokit.core.proc DEBUG [1mpoetry:[0m │       │   └── pycparser *
+2025-10-18T20:52:44.712 algokit.core.proc DEBUG [1mpoetry:[0m │       └── cffi >=2.0.0 (circular dependency aborted here)
+2025-10-18T20:52:44.712 algokit.core.proc DEBUG [1mpoetry:[0m └── typing-extensions >=4.6.0 (circular dependency aborted here)
+2025-10-18T20:52:44.735 algokit.core.proc DEBUG 'poetry show algokit-client-generator --tree' completed successfully
+2025-10-18T20:52:44.736 algokit.core.typed_client_generation INFO Generating Python client code for application specified in /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json and writing to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T20:52:44.737 algokit.core.proc DEBUG Running 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:52:45.353 algokit.core.proc DEBUG [1mpoetry:[0m Output typed client for LiquidBurnApp to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T20:52:45.367 algokit.core.proc DEBUG 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' completed successfully
+2025-10-18T20:54:29.591 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:54:29.592 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:54:29.592 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:54:30.226 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T20:54:30.277 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T20:54:30.277 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:54:30.802 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T20:54:32.030 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json
+2025-10-18T20:54:32.031 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.teal
+2025-10-18T20:54:32.031 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.teal
+2025-10-18T20:54:32.032 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.puya.map
+2025-10-18T20:54:32.033 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.puya.map
+2025-10-18T20:54:32.174 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' completed successfully
+2025-10-18T20:54:32.600 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T20:54:32.600 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T20:54:32.600 algokit.core.typed_client_generation DEBUG Searching for project installed client generator
+2025-10-18T20:54:32.601 algokit.core.proc DEBUG Running 'poetry show algokit-client-generator --tree' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:54:32.852 algokit.core.proc DEBUG [1mpoetry:[0m algokit-client-generator 2.2.0 Algorand typed client Generator
+2025-10-18T20:54:32.853 algokit.core.proc DEBUG [1mpoetry:[0m └── algokit-utils >=4.0.1,<5.0.0
+2025-10-18T20:54:32.853 algokit.core.proc DEBUG [1mpoetry:[0m ├── httpx >=0.23.1,<=0.28.1
+2025-10-18T20:54:32.853 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── anyio *
+2025-10-18T20:54:32.854 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── idna >=2.8
+2025-10-18T20:54:32.854 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── sniffio >=1.1
+2025-10-18T20:54:32.854 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── typing-extensions >=4.5
+2025-10-18T20:54:32.854 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── certifi *
+2025-10-18T20:54:32.855 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── httpcore ==1.*
+2025-10-18T20:54:32.855 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── certifi * (circular dependency aborted here)
+2025-10-18T20:54:32.855 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── h11 >=0.16
+2025-10-18T20:54:32.855 algokit.core.proc DEBUG [1mpoetry:[0m │   └── idna * (circular dependency aborted here)
+2025-10-18T20:54:32.856 algokit.core.proc DEBUG [1mpoetry:[0m ├── py-algorand-sdk >=2.11.0,<3.0.0
+2025-10-18T20:54:32.856 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── msgpack >=1.0.0,<2
+2025-10-18T20:54:32.856 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── pycryptodomex >=3.6.0,<4
+2025-10-18T20:54:32.856 algokit.core.proc DEBUG [1mpoetry:[0m │   └── pynacl >=1.4.0,<2
+2025-10-18T20:54:32.856 algokit.core.proc DEBUG [1mpoetry:[0m │       ├── cffi >=1.4.1
+2025-10-18T20:54:32.857 algokit.core.proc DEBUG [1mpoetry:[0m │       │   └── pycparser *
+2025-10-18T20:54:32.857 algokit.core.proc DEBUG [1mpoetry:[0m │       └── cffi >=2.0.0 (circular dependency aborted here)
+2025-10-18T20:54:32.857 algokit.core.proc DEBUG [1mpoetry:[0m └── typing-extensions >=4.6.0 (circular dependency aborted here)
+2025-10-18T20:54:32.881 algokit.core.proc DEBUG 'poetry show algokit-client-generator --tree' completed successfully
+2025-10-18T20:54:32.882 algokit.core.typed_client_generation INFO Generating Python client code for application specified in /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json and writing to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T20:54:32.882 algokit.core.proc DEBUG Running 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T20:54:33.214 algokit.core.proc DEBUG [1mpoetry:[0m Output typed client for LiquidBurnApp to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T20:54:33.226 algokit.core.proc DEBUG 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' completed successfully
+2025-10-18T21:13:21.446 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T21:13:21.447 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T21:13:21.447 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:22.272 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T21:13:22.336 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T21:13:22.336 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:22.899 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T21:13:23.893 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:18:18 error: Unexpected keyword argument "global_ints" for "StateTotals"; did you mean "global_uints", "local_uints", or "global_bytes"?  [call-arg]
+2025-10-18T21:13:23.893 algokit.core.proc DEBUG [1mpoetry:[0m .venv/lib/python3.13/site-packages/puyapy/_typeshed/stdlib/algopy/_contract.pyi:18:5 info: "StateTotals" defined here
+2025-10-18T21:13:23.894 algokit.core.proc DEBUG [1mpoetry:[0m smart_contracts/liquid_burn_app/contract.py:18:18 error: Unexpected keyword argument "local_ints" for "StateTotals"; did you mean "local_uints", "global_uints", or "local_bytes"?  [call-arg]
+2025-10-18T21:13:24.054 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' failed, exited with code = 1
+2025-10-18T21:13:40.568 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T21:13:40.568 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T21:13:40.569 algokit.core.proc DEBUG Running 'poetry run puyapy --version' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:41.228 algokit.core.proc DEBUG [1mpoetry:[0m puyapy 5.2.0
+2025-10-18T21:13:41.305 algokit.core.proc DEBUG 'poetry run puyapy --version' completed successfully
+2025-10-18T21:13:41.306 algokit.core.proc DEBUG Running 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:41.914 algokit.core.proc DEBUG [1mpoetry:[0m info: using python search path: ['/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/.venv/lib/python3.13/site-packages']
+2025-10-18T21:13:43.249 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json
+2025-10-18T21:13:43.250 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.teal
+2025-10-18T21:13:43.250 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.teal
+2025-10-18T21:13:43.250 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.approval.puya.map
+2025-10-18T21:13:43.250 algokit.core.proc DEBUG [1mpoetry:[0m info: Writing smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.clear.puya.map
+2025-10-18T21:13:43.437 algokit.core.proc DEBUG 'poetry run puyapy /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/liquid_burn_app/contract.py --out-dir=/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app --no-output-arc32 --output-arc56 --output-source-map' completed successfully
+2025-10-18T21:13:43.985 algokit.core.config_commands.version_prompt DEBUG  found in cache /Users/max/Desktop/kings AI Programing/1/Library/Application Support/algokit/last-version-check
+2025-10-18T21:13:43.985 algokit.core.config_commands.version_prompt DEBUG Could not determine latest version
+2025-10-18T21:13:43.986 algokit.core.typed_client_generation DEBUG Searching for project installed client generator
+2025-10-18T21:13:43.986 algokit.core.proc DEBUG Running 'poetry show algokit-client-generator --tree' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:44.255 algokit.core.proc DEBUG [1mpoetry:[0m algokit-client-generator 2.2.0 Algorand typed client Generator
+2025-10-18T21:13:44.255 algokit.core.proc DEBUG [1mpoetry:[0m └── algokit-utils >=4.0.1,<5.0.0
+2025-10-18T21:13:44.256 algokit.core.proc DEBUG [1mpoetry:[0m ├── httpx >=0.23.1,<=0.28.1
+2025-10-18T21:13:44.256 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── anyio *
+2025-10-18T21:13:44.256 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── idna >=2.8
+2025-10-18T21:13:44.256 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── sniffio >=1.1
+2025-10-18T21:13:44.257 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── typing-extensions >=4.5
+2025-10-18T21:13:44.257 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── certifi *
+2025-10-18T21:13:44.257 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── httpcore ==1.*
+2025-10-18T21:13:44.257 algokit.core.proc DEBUG [1mpoetry:[0m │   │   ├── certifi * (circular dependency aborted here)
+2025-10-18T21:13:44.258 algokit.core.proc DEBUG [1mpoetry:[0m │   │   └── h11 >=0.16
+2025-10-18T21:13:44.258 algokit.core.proc DEBUG [1mpoetry:[0m │   └── idna * (circular dependency aborted here)
+2025-10-18T21:13:44.258 algokit.core.proc DEBUG [1mpoetry:[0m ├── py-algorand-sdk >=2.11.0,<3.0.0
+2025-10-18T21:13:44.258 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── msgpack >=1.0.0,<2
+2025-10-18T21:13:44.258 algokit.core.proc DEBUG [1mpoetry:[0m │   ├── pycryptodomex >=3.6.0,<4
+2025-10-18T21:13:44.259 algokit.core.proc DEBUG [1mpoetry:[0m │   └── pynacl >=1.4.0,<2
+2025-10-18T21:13:44.259 algokit.core.proc DEBUG [1mpoetry:[0m │       ├── cffi >=1.4.1
+2025-10-18T21:13:44.259 algokit.core.proc DEBUG [1mpoetry:[0m │       │   └── pycparser *
+2025-10-18T21:13:44.259 algokit.core.proc DEBUG [1mpoetry:[0m │       └── cffi >=2.0.0 (circular dependency aborted here)
+2025-10-18T21:13:44.260 algokit.core.proc DEBUG [1mpoetry:[0m └── typing-extensions >=4.6.0 (circular dependency aborted here)
+2025-10-18T21:13:44.291 algokit.core.proc DEBUG 'poetry show algokit-client-generator --tree' completed successfully
+2025-10-18T21:13:44.292 algokit.core.typed_client_generation INFO Generating Python client code for application specified in /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json and writing to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T21:13:44.293 algokit.core.proc DEBUG Running 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' in '/Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract'
+2025-10-18T21:13:44.654 algokit.core.proc DEBUG [1mpoetry:[0m Output typed client for LiquidBurnApp to /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py
+2025-10-18T21:13:44.668 algokit.core.proc DEBUG 'poetry run algokitgen-py -a /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/LiquidBurnApp.arc56.json -o /Users/max/Desktop/kings AI Programing/1/liquid_burn_contract/projects/liquid_burn_contract/smart_contracts/artifacts/liquid_burn_app/liquid_burn_app_client.py' completed successfully
